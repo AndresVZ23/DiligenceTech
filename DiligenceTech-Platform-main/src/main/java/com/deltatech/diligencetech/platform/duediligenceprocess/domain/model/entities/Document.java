@@ -1,0 +1,54 @@
+package com.deltatech.diligencetech.platform.duediligenceprocess.domain.model.entities;
+
+import com.deltatech.diligencetech.platform.duediligenceprocess.domain.model.aggregates.Folder;
+import com.deltatech.diligencetech.platform.duediligenceprocess.domain.model.commands.CreateDocumentCommand;
+import com.deltatech.diligencetech.platform.shared.domain.model.entities.AuditableModel;
+import jakarta.persistence.*;
+import lombok.Getter;
+
+@Getter
+@Entity
+public class Document extends AuditableModel {
+    // attributes
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    private Long id;
+
+    @Column(length = 1000)
+    @Getter
+    private String filename;
+
+    // max length of very big
+    @Column(length = 1000)
+    @Getter
+    private String fileUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "folder_id")
+    private Folder folder;
+
+    public Document(CreateDocumentCommand command) {
+
+        this.filename = command.filename();
+        this.fileUrl = command.fileUrl();
+
+    }
+
+    public Document() {
+
+    }
+
+    public void insertFolder(Folder folder) {
+        this.folder = folder;
+    }
+
+    public Document updateName(String filename) {
+
+        this.filename = filename;
+        return this;
+
+    }
+
+
+}
