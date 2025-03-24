@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "612857743772",
+    "project_id": "diligencetech-os",
+    "storage_bucket": "diligencetech-os.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612857743772:android:4a9ee9c8d7a88eca822059",
+        "android_client_info": {
+          "package_name": "pe.edu.upc.diligencetech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVbb9Gw-RpkHQ7Wq4I5m9BMVwyMj2zG28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
